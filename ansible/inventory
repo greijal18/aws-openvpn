@@ -1,0 +1,2 @@
+[vpn]
+18.231.84.120 ansible_ssh_user=ubuntu

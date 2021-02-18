@@ -1,0 +1,12 @@
+---
+- name: Install docker
+  become: yes
+  hosts: all
+  roles:
+    - docker
+
+- name: Install and config vpn
+  become: yes
+  hosts: all
+  roles:
+    - vpn

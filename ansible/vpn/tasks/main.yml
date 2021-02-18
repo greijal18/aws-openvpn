@@ -1,0 +1,15 @@
+---
+# tasks file for vpn
+- name: Install vpn
+  shell: |
+          sudo docker create --name=openvpn-as \
+          --restart=always \
+          -v /home/docker/openvpn-as/config:/config \
+          -e INTERFACE=eth0 \
+          -e PGID=1000 -e PUID=1000 \
+          -p 943:943 \
+          -e TZ=GMT-3 \
+          --net=host --privileged \
+          linuxserver/openvpn-as
+
+          docker start openvpn-as
